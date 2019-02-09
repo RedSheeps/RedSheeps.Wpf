@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
+    <Version>0.0.1-pre</Version>
+    <Authors>Atsushi Nakamura</Authors>
+    <Company></Company>
+    <PackageProjectUrl>https://github.com/nuitsjp/RedSheeps.Wpf</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nuitsjp/RedSheeps.Wpf.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>WPF event command behavior trigger action</PackageTags>
+    <PackageLicenseUrl>https://github.com/nuitsjp/RedSheeps.Wpf/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright 2019 Atsushi Nakamura</Copyright>
+    <Description>Generic WPF extension library. For example, one line binds commands to all events.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,8 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>

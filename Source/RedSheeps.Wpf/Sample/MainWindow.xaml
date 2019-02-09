@@ -7,11 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         xmlns:interactivity="clr-namespace:RedSheeps.Wpf.Interactivity;assembly=RedSheeps.Wpf"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
         interactivity:FrameworkElements.Loaded="{Binding InitializeCommand}">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5">
+        <Button Content="Save File" Margin="5">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <interactivity:SaveFileAction
+                        DefaultExt=".txt"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+    </StackPanel>
 </Window>
