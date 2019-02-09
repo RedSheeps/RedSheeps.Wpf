@@ -1,0 +1,210 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ Assembly Name="System.Core.dll" #>
+<#@ Assembly Name="System.ObjectModel.dll" #>
+<#@ Assembly Name="System.Windows.dll" #>
+<#@ Assembly Name="PresentationCore.dll" #>
+<#@ Assembly Name="PresentationFramework.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Windows" #>
+<#@ import namespace="System.Windows.Data" #>
+<#@ import namespace="System.Windows.Controls" #>
+<#@ import namespace="System.Windows.Controls.Primitives" #>
+<#@ import namespace="System.Windows.Navigation" #>
+<#@ import namespace="System.Windows.Interop" #>
+<#   
+    var assembly = typeof(Page).Assembly;
+    var types = assembly.ExportedTypes
+        .Where(
+            x => !x.IsInterface
+                && !x.IsGenericType
+                && x.IsSubclassOf(typeof(System.Windows.UIElement)))
+        .OrderBy(x => x.FullName);
+	var excludeInfos = new List<ExcludeInfo>
+	{
+		new ExcludeInfo { Type = typeof(Image), EventName = "DpiChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(Window), EventName = "DpiChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(WebBrowser), EventName = "DpiChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(ActiveXHost), EventName = "DpiChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(NavigationWindow), EventName = "DpiChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(HwndHost), EventName = "DpiChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(HwndHost), EventName = "MessageHook", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(RangeBase), EventName = "ValueChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(ProgressBar), EventName = "ValueChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(ScrollBar), EventName = "ValueChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(Slider), EventName = "ValueChanged", EventPropertyName = null  },
+		new ExcludeInfo { Type = typeof(TreeView), EventName = "SelectedItemChanged", EventPropertyName = null  },
+	};
+
+#>
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Data;
+using System.Windows.Input;
+using System.Windows.Navigation;
+using System.Windows.Documents;
+using System.Windows.Ink;
+using System.Windows.Shapes;
+using System.Windows.Interop;
+using System.ComponentModel;
+
+namespace RedSheeps.Wpf.Interactivity {
+<#
+	foreach (var type in types)
+    {
+		var eventInfos = 
+			type.GetEvents()
+				.Where(x => 
+				{	
+					return x.DeclaringType == type
+						&& !excludeInfos.Any(excludeInfo => excludeInfo.Type == type && excludeInfo.EventName == x.Name && excludeInfo.EventPropertyName == null);
+				})
+				.OrderBy(x => x.Name);
+		if(eventInfos.Any())
+        {
+			string typeName;
+			if(type.Name.EndsWith("ry"))
+            {
+				typeName = type.Name.Substring(0, type.Name.Length - 1) + "ies";
+            }
+			if(type.Name.EndsWith("s"))
+            {
+				typeName = type.Name.Substring(0, type.Name.Length - 1) + "ses";
+            }
+			else
+            {
+				typeName = type.Name + "s";
+            }
+#>
+
+	#region <#= typeName #>
+	public static partial class <#= typeName #> {
+<#
+			foreach (var eventInfo in eventInfos)
+			{
+				WriteProperty(
+					type, 
+					eventInfo.Name, 
+					typeName, 
+					eventInfo.Name, 
+					"On" + eventInfo.Name, 
+					//"EventArgs", 
+					eventInfo.EventHandlerType.GetRuntimeMethods().Single(x => x.Name == "Invoke").GetParameters()[1].ParameterType.Name,
+					"null", 
+					"        ");
+                if (eventInfo.EventHandlerType.IsGenericType)
+                {
+                    var eventArgType = eventInfo.EventHandlerType.GenericTypeArguments.First();
+					var properties = eventArgType.GetProperties().Where(propertyInfo =>
+					{
+						return !excludeInfos.Any(x => x.Type == type && x.EventName == eventInfo.Name && x.EventPropertyName == propertyInfo.Name)
+							&& !propertyInfo.PropertyType.FullName.StartsWith("Xamarin.Forms");
+					});
+					if(properties.Any())
+					{
+						foreach (var propertyInfo in properties)
+						{
+							string eventArgsTypeName;
+							if(eventArgType.IsGenericType)
+							{
+								var typeArgs = string.Join(", ", eventArgType.GenericTypeArguments.Select(x => x.FullName));
+								eventArgsTypeName =
+									eventArgType.FullName.Substring(0, eventArgType.FullName.IndexOf("`", StringComparison.Ordinal))
+									+ "<" + typeArgs + ">";
+							}
+							else
+							{
+								eventArgsTypeName = eventArgType.FullName;
+							}
+							eventArgsTypeName = eventArgsTypeName.Replace("+", ".");
+						
+
+							WriteProperty(
+								type, 
+								eventInfo.Name, 
+								typeName, 
+								eventInfo.Name + "Notify" + propertyInfo.Name, 
+								"On" + eventInfo.Name + "Notify" + propertyInfo.Name, 
+								eventArgsTypeName, 
+								"eventArgs." + propertyInfo.Name, 
+								"        ");
+						}
+					}
+				}
+            }
+#>
+	}
+	#endregion
+<#
+        }
+#>
+<#
+    }
+#>
+}
+<#
+	void WriteProperty(Type baseType, string eventName, string typeName, string propertyName, string eventHandlerName, string eventArgsTypeName, string commandParameter, string indent)
+	{
+		PushIndent(indent);
+#>
+
+#region <#= propertyName #>
+public static readonly DependencyProperty <#= propertyName #>Property =
+    DependencyProperty.RegisterAttached("<#= propertyName #>", typeof(ICommand), typeof(<#= typeName #>), new FrameworkPropertyMetadata(On<#= propertyName #>Changed));
+
+public static ICommand Get<#= propertyName #>(DependencyObject target)
+{
+    return (ICommand)target.GetValue(<#= propertyName #>Property);
+}
+
+public static void Set<#= propertyName #>(DependencyObject target, ICommand value)
+{
+    target.SetValue(<#= propertyName #>Property, value);
+}
+
+private static void On<#= propertyName #>Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+{
+    if (d is <#= baseType.Name #> target)
+    {
+        if (e.OldValue != null)
+        {
+            target.<#= eventName #> -= <#= eventHandlerName #>;
+        }
+        if (e.NewValue != null)
+        {
+            target.<#= eventName #> += <#= eventHandlerName #>;
+        }
+    }
+}
+
+private static void <#= eventHandlerName #>(object o, <#= eventArgsTypeName #> eventArgs)
+{
+    var command = Get<#= propertyName #>((DependencyObject)o);
+    if (command.CanExecute(<#= commandParameter #>))
+        command.Execute(<#= commandParameter #>);
+}
+#endregion
+<#
+		PopIndent();
+	}
+#>
+<#+
+	public class BindablePropertyInfo
+	{
+		public string PropertyName { get; set; }
+		public string EventHandlerName { get; set; }
+		public string EventArgsTypeName { get; set; }
+		public string CommandParameter { get; set; }
+	}
+
+	public class ExcludeInfo
+	{
+		public Type Type { get; set; }
+		public string EventName { get; set; }
+		public string EventPropertyName { get; set; }
+	}
+#>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28516.95
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSheeps.Wpf", "RedSheeps.Wpf\RedSheeps.Wpf.csproj", "{D6649021-E950-4C5F-9A7B-C14C585FF6BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6649021-E950-4C5F-9A7B-C14C585FF6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6649021-E950-4C5F-9A7B-C14C585FF6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6649021-E950-4C5F-9A7B-C14C585FF6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6649021-E950-4C5F-9A7B-C14C585FF6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D785D7D7-3237-4C69-BC36-A30EBF365297}
+	EndGlobalSection
+EndGlobal
