@@ -16,8 +16,30 @@
         <Button Content="Save File" Margin="5">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
-                    <interactivity:SaveFileAction
-                        DefaultExt=".txt"/>
+                    <interactivity:SaveFileAction DefaultExt=".txt"
+                                                  Filter="Text File(.txt)|*.txt"
+                                                  Title="Dialog Title"
+                                                  Command="{Binding SaveFileCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <Button Content="Open File" Margin="5">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <interactivity:OpenFileAction DefaultExt=".txt"
+                                                  Filter="Text File(.txt)|*.txt"
+                                                  Title="Dialog Title"
+                                                  Command="{Binding OpenFileCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <Button Content="Open FileS" Margin="5">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <interactivity:OpenFilesAction DefaultExt=".txt"
+                                                  Filter="Text File(.txt)|*.txt"
+                                                  Title="Dialog Title"
+                                                  Command="{Binding OpenFilesCommand}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>

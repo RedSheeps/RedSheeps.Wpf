@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <Version>0.0.1-pre</Version>
+    <Version>0.0.5-alpha</Version>
     <Authors>Atsushi Nakamura</Authors>
     <Company></Company>
     <PackageProjectUrl>https://github.com/nuitsjp/RedSheeps.Wpf</PackageProjectUrl>
@@ -17,24 +17,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Interactivity\EventToCommandProperties.tt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Interactivity\EventToCommandProperties.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EventToCommandProperties.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Microsoft.Expression.Interactions">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\Microsoft.Expression.Interactions.dll</HintPath>
+      <HintPath>..\..\..\Library\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Windows.Interactivity">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.5\Libraries\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\..\..\Library\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
@@ -50,6 +39,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EventToCommandProperties.tt</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Interactivity\EventToCommandProperties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EventToCommandProperties.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

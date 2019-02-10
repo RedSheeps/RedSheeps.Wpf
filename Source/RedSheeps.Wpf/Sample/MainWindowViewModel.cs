@@ -12,9 +12,29 @@ namespace Sample
     {
         public ICommand InitializeCommand => new Command(OnInitialize);
 
+        public Command<string> SaveFileCommand => new Command<string>(OnSaveFile);
+
+        public Command<string> OpenFileCommand => new Command<string>(OnOpenFile);
+        public Command<IEnumerable<string>> OpenFilesCommand => new Command<IEnumerable<string>>(OnOpenFiles);
+
         private void OnInitialize()
         {
             
+        }
+
+        private void OnSaveFile(string fileName)
+        {
+
+        }
+
+        private void OnOpenFile(string fileName)
+        {
+
+        }
+
+        private void OnOpenFiles(IEnumerable<string> fileNames)
+        {
+
         }
     }
 }
