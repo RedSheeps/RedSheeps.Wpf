@@ -12,6 +12,8 @@ namespace Sample
     {
         public ICommand InitializeCommand => new Command(OnInitialize);
 
+        public string FileName => DateTime.Today.ToString("yyyyMMdd");
+
         public Command<string> SaveFileCommand => new Command<string>(OnSaveFile);
 
         public Command<string> OpenFileCommand => new Command<string>(OnOpenFile);

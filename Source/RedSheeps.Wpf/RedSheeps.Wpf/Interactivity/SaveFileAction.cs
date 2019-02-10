@@ -22,6 +22,15 @@ namespace RedSheeps.Wpf.Interactivity
             set { SetValue(DefaultExtProperty, value); }
         }
 
+        public static readonly DependencyProperty FileNameProperty =
+            DependencyProperty.Register("FileName", typeof(string), typeof(SaveFileAction), new PropertyMetadata(default(string)));
+
+        public string FileName
+        {
+            get { return (string)GetValue(FileNameProperty); }
+            set { SetValue(FileNameProperty, value); }
+        }
+
         public static readonly DependencyProperty FilterProperty = DependencyProperty.Register(
             "Filter", typeof(string), typeof(SaveFileAction), new PropertyMetadata(default(string)));
 
@@ -56,6 +65,7 @@ namespace RedSheeps.Wpf.Interactivity
             {
                 var dialog = new SaveFileDialog();
                 dialog.DefaultExt = DefaultExt;
+                dialog.FileName = FileName;
                 dialog.Filter = Filter;
                 dialog.Title = Title;
                 if (dialog.ShowDialog() == true)

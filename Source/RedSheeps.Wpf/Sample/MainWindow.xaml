@@ -17,6 +17,7 @@
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <interactivity:SaveFileAction DefaultExt=".txt"
+                                                  FileName="{Binding FileName}"
                                                   Filter="Text File(.txt)|*.txt"
                                                   Title="Dialog Title"
                                                   Command="{Binding SaveFileCommand}"/>
@@ -27,6 +28,7 @@
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <interactivity:OpenFileAction DefaultExt=".txt"
+                                                  FileName="{Binding FileName}"
                                                   Filter="Text File(.txt)|*.txt"
                                                   Title="Dialog Title"
                                                   Command="{Binding OpenFileCommand}"/>
@@ -37,6 +39,7 @@
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <interactivity:OpenFilesAction DefaultExt=".txt"
+                                                  FileName="{Binding FileName}"
                                                   Filter="Text File(.txt)|*.txt"
                                                   Title="Dialog Title"
                                                   Command="{Binding OpenFilesCommand}"/>
