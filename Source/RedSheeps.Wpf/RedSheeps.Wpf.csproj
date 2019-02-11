@@ -18,12 +18,12 @@
 
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Interactions">
-      <HintPath>..\..\..\Library\Microsoft.Expression.Interactions.dll</HintPath>
+      <HintPath>..\..\Library\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Windows.Interactivity">
-      <HintPath>..\..\..\Library\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\..\Library\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />

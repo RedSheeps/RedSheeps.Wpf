@@ -96,7 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RedSheeps.Wpf\RedSheeps.Wpf.csproj">
+    <ProjectReference Include="..\..\Source\RedSheeps.Wpf\RedSheeps.Wpf.csproj">
       <Project>{d6649021-e950-4c5f-9a7b-c14c585ff6bc}</Project>
       <Name>RedSheeps.Wpf</Name>
     </ProjectReference>
