@@ -13,8 +13,8 @@ namespace RedSheeps.Wpf.Interactivity
 
         public string DefaultExt
         {
-            get { return (string) GetValue(DefaultExtProperty); }
-            set { SetValue(DefaultExtProperty, value); }
+            get => (string) GetValue(DefaultExtProperty);
+            set => SetValue(DefaultExtProperty, value);
         }
 
         public static readonly DependencyProperty FileNameProperty =
@@ -22,8 +22,8 @@ namespace RedSheeps.Wpf.Interactivity
 
         public string FileName
         {
-            get { return (string)GetValue(FileNameProperty); }
-            set { SetValue(FileNameProperty, value); }
+            get => (string)GetValue(FileNameProperty);
+            set => SetValue(FileNameProperty, value);
         }
 
         public static readonly DependencyProperty FilterProperty = DependencyProperty.Register(
@@ -31,8 +31,8 @@ namespace RedSheeps.Wpf.Interactivity
 
         public string Filter
         {
-            get { return (string) GetValue(FilterProperty); }
-            set { SetValue(FilterProperty, value); }
+            get => (string) GetValue(FilterProperty);
+            set => SetValue(FilterProperty, value);
         }
 
         public static readonly DependencyProperty TitleProperty =
@@ -40,8 +40,8 @@ namespace RedSheeps.Wpf.Interactivity
 
         public string Title
         {
-            get { return (string)GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            get => (string)GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
         }
 
         public static readonly DependencyProperty CommandProperty =
@@ -49,8 +49,8 @@ namespace RedSheeps.Wpf.Interactivity
 
         public ICommand Command
         {
-            get { return (ICommand)GetValue(CommandProperty); }
-            set { SetValue(CommandProperty, value); }
+            get => (ICommand)GetValue(CommandProperty);
+            set => SetValue(CommandProperty, value);
         }
         #endregion
 
