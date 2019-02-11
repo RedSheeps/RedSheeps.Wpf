@@ -4,7 +4,7 @@
     {
         protected override void OnRender(System.Windows.Media.DrawingContext dc)
         {
-            this.VisualBitmapScalingMode = System.Windows.Media.BitmapScalingMode.Fant;
+            VisualBitmapScalingMode = System.Windows.Media.BitmapScalingMode.Fant;
             base.OnRender(dc);
         }
     }
