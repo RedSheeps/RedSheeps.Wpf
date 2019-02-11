@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using System.Windows.Interactivity;
 
 namespace RedSheeps.Wpf.Interactivity
@@ -41,12 +42,26 @@ namespace RedSheeps.Wpf.Interactivity
             set => SetValue(MessageBoxImageProperty, value);
         }
 
+        public static readonly DependencyProperty PositiveCommandProperty = DependencyProperty.Register(
+            "PositiveCommand", typeof(ICommand), typeof(ShowMessageAction), new PropertyMetadata(default(ICommand)));
+
+        public ICommand PositiveCommand
+        {
+            get => (ICommand) GetValue(PositiveCommandProperty);
+            set => SetValue(PositiveCommandProperty, value);
+        }
+
         protected override void Invoke(object parameter)
         {
             var window = Window.GetWindow(AssociatedObject);
             var messageBoxResult = MessageBox.Show(window, Message, Caption, MessageBoxButton, MessageBoxImage);
+
             if (parameter is ShowMessageEventArgs showMessageEventArgs)
                 showMessageEventArgs.MessageBoxResult = messageBoxResult;
+
+            if((messageBoxResult == MessageBoxResult.OK || messageBoxResult == MessageBoxResult.Yes)
+                && PositiveCommand != null && PositiveCommand.CanExecute(null))
+                PositiveCommand?.Execute(null);
         }
     }
 }

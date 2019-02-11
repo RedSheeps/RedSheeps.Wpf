@@ -73,5 +73,16 @@
                 </interactivity:NotificationTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <Button Content="Show Confirm" Margin="5">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <interactivity:ShowMessageAction Message="Hello, World!"
+                                                     Caption="Caption"
+                                                     MessageBoxButton="OKCancel"
+                                                     MessageBoxImage="Question"
+                                                     PositiveCommand="{Binding PositiveCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
     </StackPanel>
 </Window>

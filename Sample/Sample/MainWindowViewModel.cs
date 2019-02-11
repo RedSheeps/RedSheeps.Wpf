@@ -26,6 +26,8 @@ namespace Sample
 
         public INotification<ShowMessageEventArgs> NotificationConfirm { get; } = new Notification<ShowMessageEventArgs>();
 
+        public ICommand PositiveCommand => new Command(OnPositive);
+
         private void OnInitialize()
         {
             
@@ -56,6 +58,10 @@ namespace Sample
             var showMessageEventArgs = new ShowMessageEventArgs();
             NotificationConfirm.Notify(showMessageEventArgs);
             Debug.WriteLine(showMessageEventArgs.MessageBoxResult);
+        }
+
+        private void OnPositive()
+        {
         }
     }
 }
