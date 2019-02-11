@@ -58,11 +58,13 @@ namespace RedSheeps.Wpf.Interactivity
         {
             if(Command != null && Command.CanExecute(null))
             {
-                var dialog = new SaveFileDialog();
-                dialog.DefaultExt = DefaultExt;
-                dialog.FileName = FileName;
-                dialog.Filter = Filter;
-                dialog.Title = Title;
+                var dialog = new SaveFileDialog
+                {
+                    DefaultExt = DefaultExt,
+                    FileName = FileName,
+                    Filter = Filter,
+                    Title = Title
+                };
                 if (dialog.ShowDialog() == true)
                 {
                     Command.Execute(dialog.FileName);
