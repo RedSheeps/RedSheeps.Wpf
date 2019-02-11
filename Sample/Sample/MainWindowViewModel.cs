@@ -1,7 +1,9 @@
 ﻿using RedSheeps.Wpf.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Input;
+using RedSheeps.Wpf.Interactivity;
 
 namespace Sample
 {
@@ -15,6 +17,14 @@ namespace Sample
 
         public Command<string> OpenFileCommand => new Command<string>(OnOpenFile);
         public Command<IEnumerable<string>> OpenFilesCommand => new Command<IEnumerable<string>>(OnOpenFiles);
+
+        public ICommand ShowMessageCommand => new Command(OnShowMessage);
+
+        public INotification Notification { get; } = new Notification();
+
+        public ICommand ShowConfirmCommand => new Command(OnShowConfirm);
+
+        public INotification<ShowMessageEventArgs> NotificationConfirm { get; } = new Notification<ShowMessageEventArgs>();
 
         private void OnInitialize()
         {
@@ -34,6 +44,18 @@ namespace Sample
         private void OnOpenFiles(IEnumerable<string> fileNames)
         {
 
+        }
+
+        private void OnShowMessage()
+        {
+            Notification.Notify();
+        }
+
+        private void OnShowConfirm()
+        {
+            var showMessageEventArgs = new ShowMessageEventArgs();
+            NotificationConfirm.Notify(showMessageEventArgs);
+            Debug.WriteLine(showMessageEventArgs.MessageBoxResult);
         }
     }
 }

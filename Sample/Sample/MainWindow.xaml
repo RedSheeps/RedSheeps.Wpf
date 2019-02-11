@@ -53,5 +53,25 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <Button Content="Show Message" Margin="5" Command="{Binding ShowMessageCommand}">
+            <i:Interaction.Triggers>
+                <interactivity:NotificationTrigger Notification="{Binding Notification}">
+                    <interactivity:ShowMessageAction Message="Hello, World!"
+                                                     Caption="Caption"
+                                                     MessageBoxButton="OK"
+                                                     MessageBoxImage="Information"/>
+                </interactivity:NotificationTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <Button Content="Show Confirm" Margin="5" Command="{Binding ShowConfirmCommand}">
+            <i:Interaction.Triggers>
+                <interactivity:NotificationTrigger Notification="{Binding NotificationConfirm}">
+                    <interactivity:ShowMessageAction Message="Hello, World!"
+                                                     Caption="Caption"
+                                                     MessageBoxButton="OKCancel"
+                                                     MessageBoxImage="Question"/>
+                </interactivity:NotificationTrigger>
+            </i:Interaction.Triggers>
+        </Button>
     </StackPanel>
 </Window>
