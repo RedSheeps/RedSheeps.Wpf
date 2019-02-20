@@ -42,6 +42,24 @@ namespace RedSheeps.Wpf.Interactivity
             set => SetValue(MessageBoxImageProperty, value);
         }
 
+        public static readonly DependencyProperty DefaultResultProperty = DependencyProperty.Register(
+            "DefaultResult", typeof(MessageBoxResult), typeof(ShowMessageAction), new PropertyMetadata(MessageBoxResult.None));
+
+        public MessageBoxResult DefaultResult
+        {
+            get => (MessageBoxResult ) GetValue(DefaultResultProperty);
+            set => SetValue(DefaultResultProperty, value);
+        }
+
+        public static readonly DependencyProperty OptionsProperty = DependencyProperty.Register(
+            "Options", typeof(MessageBoxOptions), typeof(ShowMessageAction), new PropertyMetadata(MessageBoxOptions.None));
+
+        public MessageBoxOptions Options
+        {
+            get => (MessageBoxOptions) GetValue(OptionsProperty);
+            set => SetValue(OptionsProperty, value);
+        }
+
         public static readonly DependencyProperty PositiveCommandProperty = DependencyProperty.Register(
             "PositiveCommand", typeof(ICommand), typeof(ShowMessageAction), new PropertyMetadata(default(ICommand)));
 
@@ -55,7 +73,6 @@ namespace RedSheeps.Wpf.Interactivity
         {
             var window = Window.GetWindow(AssociatedObject);
             var messageBoxResult = MessageBox.Show(window, Message, Caption, MessageBoxButton, MessageBoxImage);
-
             if (parameter is ShowMessageEventArgs showMessageEventArgs)
                 showMessageEventArgs.MessageBoxResult = messageBoxResult;
 

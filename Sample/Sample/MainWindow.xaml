@@ -69,7 +69,9 @@
                     <interactivity:ShowMessageAction Message="Hello, World!"
                                                      Caption="Caption"
                                                      MessageBoxButton="OKCancel"
-                                                     MessageBoxImage="Question"/>
+                                                     MessageBoxImage="Question"
+                                                     DefaultResult="OK"
+                                                     Options="None"/>
                 </interactivity:NotificationTrigger>
             </i:Interaction.Triggers>
         </Button>
