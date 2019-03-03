@@ -53,6 +53,13 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <Button Content="Close Window With Command When Canceled" Margin="5">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <interactivity:CloseWindowAction Command="{Binding CloseWindowCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
         <Button Content="Show Message" Margin="5" Command="{Binding ShowMessageCommand}">
             <i:Interaction.Triggers>
                 <interactivity:NotificationTrigger Notification="{Binding Notification}">

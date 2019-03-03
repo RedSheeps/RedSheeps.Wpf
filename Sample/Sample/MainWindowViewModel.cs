@@ -1,4 +1,4 @@
-﻿using RedSheeps.Wpf.Input;
+﻿using RedSheeps.Input;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,6 +17,8 @@ namespace Sample
 
         public Command<string> OpenFileCommand => new Command<string>(OnOpenFile);
         public Command<IEnumerable<string>> OpenFilesCommand => new Command<IEnumerable<string>>(OnOpenFiles);
+
+        public Command<CloseWindowActionEventArgs> CloseWindowCommand => new Command<CloseWindowActionEventArgs>(OnCloseWindow);
 
         public ICommand ShowMessageCommand => new Command(OnShowMessage);
 
@@ -46,6 +48,13 @@ namespace Sample
         private void OnOpenFiles(IEnumerable<string> fileNames)
         {
 
+        }
+
+        bool close;
+        private void OnCloseWindow(CloseWindowActionEventArgs e)
+        {
+            close = !close;
+            e.Handle = close;
         }
 
         private void OnShowMessage()
