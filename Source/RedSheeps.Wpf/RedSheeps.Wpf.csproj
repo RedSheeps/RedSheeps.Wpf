@@ -2,18 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <Authors>Atsushi Nakamura</Authors>
     <Company></Company>
     <PackageProjectUrl>https://github.com/nuitsjp/RedSheeps.Wpf</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nuitsjp/RedSheeps.Wpf.git</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>WPF event command behavior trigger action</PackageTags>
-    <PackageLicenseUrl>https://github.com/nuitsjp/RedSheeps.Wpf/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <Copyright>Copyright 2019 Atsushi Nakamura</Copyright>
     <Description>Generic WPF extension library. For example, one line binds commands to all events.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
