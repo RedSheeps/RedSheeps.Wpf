@@ -72,7 +72,7 @@ namespace RedSheeps.Wpf.Interactivity
         protected override void Invoke(object parameter)
         {
             var window = Window.GetWindow(AssociatedObject);
-            var messageBoxResult = MessageBox.Show(window, Message, Caption, MessageBoxButton, MessageBoxImage);
+            var messageBoxResult = MessageDialog.Show(window, Message, Caption, MessageBoxButton, MessageBoxImage);
             if (parameter is ShowMessageEventArgs showMessageEventArgs)
                 showMessageEventArgs.MessageBoxResult = messageBoxResult;
 
