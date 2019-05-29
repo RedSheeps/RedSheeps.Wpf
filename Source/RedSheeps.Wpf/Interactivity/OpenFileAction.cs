@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using System;
+using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interactivity;
@@ -7,7 +8,24 @@ namespace RedSheeps.Wpf.Interactivity
 {
     public class OpenFileAction : TriggerAction<DependencyObject>
     {
-        #region Dependency Properties
+        public static readonly DependencyProperty InitialDirectoryProperty = DependencyProperty.Register(
+            "InitialDirectory", typeof(string), typeof(OpenFileAction), new PropertyMetadata(default(string)));
+
+        public string InitialDirectory
+        {
+            get => (string)GetValue(InitialDirectoryProperty);
+            set => SetValue(InitialDirectoryProperty, value);
+        }
+
+        public static readonly DependencyProperty InitialSpecialDirectoryProperty = DependencyProperty.Register(
+            "InitialSpecialDirectory", typeof(Environment.SpecialFolder?), typeof(OpenFileAction), new PropertyMetadata(default(Environment.SpecialFolder?)));
+
+        public Environment.SpecialFolder? InitialSpecialDirectory
+        {
+            get => (Environment.SpecialFolder?)GetValue(InitialSpecialDirectoryProperty);
+            set => SetValue(InitialSpecialDirectoryProperty, value);
+        }
+
         public static readonly DependencyProperty DefaultExtProperty = DependencyProperty.Register(
             "DefaultExt", typeof(string), typeof(OpenFileAction), new PropertyMetadata(default(string)));
 
@@ -53,24 +71,27 @@ namespace RedSheeps.Wpf.Interactivity
             set => SetValue(CommandProperty, value);
         }
 
-        #endregion
+        private string GetInitialDirectory() =>
+            (InitialSpecialDirectory != null
+                ? Environment.GetFolderPath(InitialSpecialDirectory.Value)
+                : InitialDirectory) ?? string.Empty;
 
         protected override void Invoke(object parameter)
         {
-            if (Command != null && Command.CanExecute(null))
+            if (Command == null || !Command.CanExecute(null)) return;
+
+            var dialog = new OpenFileDialog
             {
-                var dialog = new OpenFileDialog
-                {
-                    DefaultExt = DefaultExt,
-                    FileName = FileName,
-                    Filter = Filter,
-                    Title = Title,
-                    Multiselect = false
-                };
-                if (dialog.ShowDialog() == true)
-                {
-                    Command.Execute(dialog.FileName);
-                }
+                DefaultExt = DefaultExt,
+                InitialDirectory = GetInitialDirectory(),
+                FileName = FileName,
+                Filter = Filter,
+                Title = Title,
+                Multiselect = false
+            };
+            if (dialog.ShowDialog() == true)
+            {
+                Command.Execute(dialog.FileName);
             }
         }
     }

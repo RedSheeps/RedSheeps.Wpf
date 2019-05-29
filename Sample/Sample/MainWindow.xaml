@@ -28,6 +28,7 @@
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <interactivity:OpenFileAction DefaultExt=".txt"
+                                                  InitialSpecialDirectory="Desktop"
                                                   FileName="{Binding FileName}"
                                                   Filter="Text File(.txt)|*.txt"
                                                   Title="Dialog Title"

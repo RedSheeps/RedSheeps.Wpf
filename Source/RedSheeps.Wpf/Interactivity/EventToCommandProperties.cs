@@ -7,6 +7,8 @@ using System.Windows.Input;
 using System.Windows.Navigation;
 using System.Windows.Documents;
 using System.Windows.Ink;
+using System.Windows.Shapes;
+using System.Windows.Interop;
 using System.ComponentModel;
 
 namespace RedSheeps.Wpf.Interactivity {
@@ -80,7 +82,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayDateChangedNotifyAddedDate(object o, CalendarDateChangedEventArgs eventArgs)
+        private static void OnDisplayDateChangedNotifyAddedDate(object o, System.Windows.Controls.CalendarDateChangedEventArgs eventArgs)
         {
             var command = GetDisplayDateChangedNotifyAddedDate((DependencyObject)o);
             if (command.CanExecute(eventArgs.AddedDate))
@@ -117,7 +119,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayDateChangedNotifyRemovedDate(object o, CalendarDateChangedEventArgs eventArgs)
+        private static void OnDisplayDateChangedNotifyRemovedDate(object o, System.Windows.Controls.CalendarDateChangedEventArgs eventArgs)
         {
             var command = GetDisplayDateChangedNotifyRemovedDate((DependencyObject)o);
             if (command.CanExecute(eventArgs.RemovedDate))
@@ -154,7 +156,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayDateChangedNotifyRoutedEvent(object o, CalendarDateChangedEventArgs eventArgs)
+        private static void OnDisplayDateChangedNotifyRoutedEvent(object o, System.Windows.Controls.CalendarDateChangedEventArgs eventArgs)
         {
             var command = GetDisplayDateChangedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -191,7 +193,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayDateChangedNotifyHandled(object o, CalendarDateChangedEventArgs eventArgs)
+        private static void OnDisplayDateChangedNotifyHandled(object o, System.Windows.Controls.CalendarDateChangedEventArgs eventArgs)
         {
             var command = GetDisplayDateChangedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -228,7 +230,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayDateChangedNotifySource(object o, CalendarDateChangedEventArgs eventArgs)
+        private static void OnDisplayDateChangedNotifySource(object o, System.Windows.Controls.CalendarDateChangedEventArgs eventArgs)
         {
             var command = GetDisplayDateChangedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -265,7 +267,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayDateChangedNotifyOriginalSource(object o, CalendarDateChangedEventArgs eventArgs)
+        private static void OnDisplayDateChangedNotifyOriginalSource(object o, System.Windows.Controls.CalendarDateChangedEventArgs eventArgs)
         {
             var command = GetDisplayDateChangedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -339,7 +341,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayModeChangedNotifyNewMode(object o, CalendarModeChangedEventArgs eventArgs)
+        private static void OnDisplayModeChangedNotifyNewMode(object o, System.Windows.Controls.CalendarModeChangedEventArgs eventArgs)
         {
             var command = GetDisplayModeChangedNotifyNewMode((DependencyObject)o);
             if (command.CanExecute(eventArgs.NewMode))
@@ -376,7 +378,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayModeChangedNotifyOldMode(object o, CalendarModeChangedEventArgs eventArgs)
+        private static void OnDisplayModeChangedNotifyOldMode(object o, System.Windows.Controls.CalendarModeChangedEventArgs eventArgs)
         {
             var command = GetDisplayModeChangedNotifyOldMode((DependencyObject)o);
             if (command.CanExecute(eventArgs.OldMode))
@@ -413,7 +415,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayModeChangedNotifyRoutedEvent(object o, CalendarModeChangedEventArgs eventArgs)
+        private static void OnDisplayModeChangedNotifyRoutedEvent(object o, System.Windows.Controls.CalendarModeChangedEventArgs eventArgs)
         {
             var command = GetDisplayModeChangedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -450,7 +452,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayModeChangedNotifyHandled(object o, CalendarModeChangedEventArgs eventArgs)
+        private static void OnDisplayModeChangedNotifyHandled(object o, System.Windows.Controls.CalendarModeChangedEventArgs eventArgs)
         {
             var command = GetDisplayModeChangedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -487,7 +489,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayModeChangedNotifySource(object o, CalendarModeChangedEventArgs eventArgs)
+        private static void OnDisplayModeChangedNotifySource(object o, System.Windows.Controls.CalendarModeChangedEventArgs eventArgs)
         {
             var command = GetDisplayModeChangedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -524,7 +526,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDisplayModeChangedNotifyOriginalSource(object o, CalendarModeChangedEventArgs eventArgs)
+        private static void OnDisplayModeChangedNotifyOriginalSource(object o, System.Windows.Controls.CalendarModeChangedEventArgs eventArgs)
         {
             var command = GetDisplayModeChangedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -598,7 +600,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDatesChangedNotifyRemovedItems(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDatesChangedNotifyRemovedItems(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDatesChangedNotifyRemovedItems((DependencyObject)o);
             if (command.CanExecute(eventArgs.RemovedItems))
@@ -635,7 +637,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDatesChangedNotifyAddedItems(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDatesChangedNotifyAddedItems(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDatesChangedNotifyAddedItems((DependencyObject)o);
             if (command.CanExecute(eventArgs.AddedItems))
@@ -672,7 +674,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDatesChangedNotifyRoutedEvent(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDatesChangedNotifyRoutedEvent(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDatesChangedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -709,7 +711,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDatesChangedNotifyHandled(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDatesChangedNotifyHandled(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDatesChangedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -746,7 +748,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDatesChangedNotifySource(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDatesChangedNotifySource(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDatesChangedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -783,7 +785,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDatesChangedNotifyOriginalSource(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDatesChangedNotifyOriginalSource(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDatesChangedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -1136,7 +1138,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnAddingNewItemNotifyNewItem(object o, AddingNewItemEventArgs eventArgs)
+        private static void OnAddingNewItemNotifyNewItem(object o, System.Windows.Controls.AddingNewItemEventArgs eventArgs)
         {
             var command = GetAddingNewItemNotifyNewItem((DependencyObject)o);
             if (command.CanExecute(eventArgs.NewItem))
@@ -1247,7 +1249,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnAutoGeneratingColumnNotifyColumn(object o, DataGridAutoGeneratingColumnEventArgs eventArgs)
+        private static void OnAutoGeneratingColumnNotifyColumn(object o, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs eventArgs)
         {
             var command = GetAutoGeneratingColumnNotifyColumn((DependencyObject)o);
             if (command.CanExecute(eventArgs.Column))
@@ -1284,7 +1286,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnAutoGeneratingColumnNotifyPropertyName(object o, DataGridAutoGeneratingColumnEventArgs eventArgs)
+        private static void OnAutoGeneratingColumnNotifyPropertyName(object o, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs eventArgs)
         {
             var command = GetAutoGeneratingColumnNotifyPropertyName((DependencyObject)o);
             if (command.CanExecute(eventArgs.PropertyName))
@@ -1321,7 +1323,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnAutoGeneratingColumnNotifyPropertyType(object o, DataGridAutoGeneratingColumnEventArgs eventArgs)
+        private static void OnAutoGeneratingColumnNotifyPropertyType(object o, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs eventArgs)
         {
             var command = GetAutoGeneratingColumnNotifyPropertyType((DependencyObject)o);
             if (command.CanExecute(eventArgs.PropertyType))
@@ -1358,7 +1360,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnAutoGeneratingColumnNotifyPropertyDescriptor(object o, DataGridAutoGeneratingColumnEventArgs eventArgs)
+        private static void OnAutoGeneratingColumnNotifyPropertyDescriptor(object o, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs eventArgs)
         {
             var command = GetAutoGeneratingColumnNotifyPropertyDescriptor((DependencyObject)o);
             if (command.CanExecute(eventArgs.PropertyDescriptor))
@@ -1395,7 +1397,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnAutoGeneratingColumnNotifyCancel(object o, DataGridAutoGeneratingColumnEventArgs eventArgs)
+        private static void OnAutoGeneratingColumnNotifyCancel(object o, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs eventArgs)
         {
             var command = GetAutoGeneratingColumnNotifyCancel((DependencyObject)o);
             if (command.CanExecute(eventArgs.Cancel))
@@ -1469,7 +1471,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnBeginningEditNotifyCancel(object o, DataGridBeginningEditEventArgs eventArgs)
+        private static void OnBeginningEditNotifyCancel(object o, System.Windows.Controls.DataGridBeginningEditEventArgs eventArgs)
         {
             var command = GetBeginningEditNotifyCancel((DependencyObject)o);
             if (command.CanExecute(eventArgs.Cancel))
@@ -1506,7 +1508,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnBeginningEditNotifyColumn(object o, DataGridBeginningEditEventArgs eventArgs)
+        private static void OnBeginningEditNotifyColumn(object o, System.Windows.Controls.DataGridBeginningEditEventArgs eventArgs)
         {
             var command = GetBeginningEditNotifyColumn((DependencyObject)o);
             if (command.CanExecute(eventArgs.Column))
@@ -1543,7 +1545,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnBeginningEditNotifyRow(object o, DataGridBeginningEditEventArgs eventArgs)
+        private static void OnBeginningEditNotifyRow(object o, System.Windows.Controls.DataGridBeginningEditEventArgs eventArgs)
         {
             var command = GetBeginningEditNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -1580,7 +1582,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnBeginningEditNotifyEditingEventArgs(object o, DataGridBeginningEditEventArgs eventArgs)
+        private static void OnBeginningEditNotifyEditingEventArgs(object o, System.Windows.Controls.DataGridBeginningEditEventArgs eventArgs)
         {
             var command = GetBeginningEditNotifyEditingEventArgs((DependencyObject)o);
             if (command.CanExecute(eventArgs.EditingEventArgs))
@@ -1654,7 +1656,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCellEditEndingNotifyCancel(object o, DataGridCellEditEndingEventArgs eventArgs)
+        private static void OnCellEditEndingNotifyCancel(object o, System.Windows.Controls.DataGridCellEditEndingEventArgs eventArgs)
         {
             var command = GetCellEditEndingNotifyCancel((DependencyObject)o);
             if (command.CanExecute(eventArgs.Cancel))
@@ -1691,7 +1693,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCellEditEndingNotifyColumn(object o, DataGridCellEditEndingEventArgs eventArgs)
+        private static void OnCellEditEndingNotifyColumn(object o, System.Windows.Controls.DataGridCellEditEndingEventArgs eventArgs)
         {
             var command = GetCellEditEndingNotifyColumn((DependencyObject)o);
             if (command.CanExecute(eventArgs.Column))
@@ -1728,7 +1730,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCellEditEndingNotifyRow(object o, DataGridCellEditEndingEventArgs eventArgs)
+        private static void OnCellEditEndingNotifyRow(object o, System.Windows.Controls.DataGridCellEditEndingEventArgs eventArgs)
         {
             var command = GetCellEditEndingNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -1765,7 +1767,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCellEditEndingNotifyEditingElement(object o, DataGridCellEditEndingEventArgs eventArgs)
+        private static void OnCellEditEndingNotifyEditingElement(object o, System.Windows.Controls.DataGridCellEditEndingEventArgs eventArgs)
         {
             var command = GetCellEditEndingNotifyEditingElement((DependencyObject)o);
             if (command.CanExecute(eventArgs.EditingElement))
@@ -1802,7 +1804,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCellEditEndingNotifyEditAction(object o, DataGridCellEditEndingEventArgs eventArgs)
+        private static void OnCellEditEndingNotifyEditAction(object o, System.Windows.Controls.DataGridCellEditEndingEventArgs eventArgs)
         {
             var command = GetCellEditEndingNotifyEditAction((DependencyObject)o);
             if (command.CanExecute(eventArgs.EditAction))
@@ -1876,7 +1878,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnDisplayIndexChangedNotifyColumn(object o, DataGridColumnEventArgs eventArgs)
+        private static void OnColumnDisplayIndexChangedNotifyColumn(object o, System.Windows.Controls.DataGridColumnEventArgs eventArgs)
         {
             var command = GetColumnDisplayIndexChangedNotifyColumn((DependencyObject)o);
             if (command.CanExecute(eventArgs.Column))
@@ -1950,7 +1952,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragCompletedNotifyHorizontalChange(object o, DragCompletedEventArgs eventArgs)
+        private static void OnColumnHeaderDragCompletedNotifyHorizontalChange(object o, System.Windows.Controls.Primitives.DragCompletedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragCompletedNotifyHorizontalChange((DependencyObject)o);
             if (command.CanExecute(eventArgs.HorizontalChange))
@@ -1987,7 +1989,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragCompletedNotifyVerticalChange(object o, DragCompletedEventArgs eventArgs)
+        private static void OnColumnHeaderDragCompletedNotifyVerticalChange(object o, System.Windows.Controls.Primitives.DragCompletedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragCompletedNotifyVerticalChange((DependencyObject)o);
             if (command.CanExecute(eventArgs.VerticalChange))
@@ -2024,7 +2026,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragCompletedNotifyCanceled(object o, DragCompletedEventArgs eventArgs)
+        private static void OnColumnHeaderDragCompletedNotifyCanceled(object o, System.Windows.Controls.Primitives.DragCompletedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragCompletedNotifyCanceled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Canceled))
@@ -2061,7 +2063,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragCompletedNotifyRoutedEvent(object o, DragCompletedEventArgs eventArgs)
+        private static void OnColumnHeaderDragCompletedNotifyRoutedEvent(object o, System.Windows.Controls.Primitives.DragCompletedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragCompletedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -2098,7 +2100,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragCompletedNotifyHandled(object o, DragCompletedEventArgs eventArgs)
+        private static void OnColumnHeaderDragCompletedNotifyHandled(object o, System.Windows.Controls.Primitives.DragCompletedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragCompletedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -2135,7 +2137,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragCompletedNotifySource(object o, DragCompletedEventArgs eventArgs)
+        private static void OnColumnHeaderDragCompletedNotifySource(object o, System.Windows.Controls.Primitives.DragCompletedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragCompletedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -2172,7 +2174,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragCompletedNotifyOriginalSource(object o, DragCompletedEventArgs eventArgs)
+        private static void OnColumnHeaderDragCompletedNotifyOriginalSource(object o, System.Windows.Controls.Primitives.DragCompletedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragCompletedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -2246,7 +2248,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragDeltaNotifyHorizontalChange(object o, DragDeltaEventArgs eventArgs)
+        private static void OnColumnHeaderDragDeltaNotifyHorizontalChange(object o, System.Windows.Controls.Primitives.DragDeltaEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragDeltaNotifyHorizontalChange((DependencyObject)o);
             if (command.CanExecute(eventArgs.HorizontalChange))
@@ -2283,7 +2285,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragDeltaNotifyVerticalChange(object o, DragDeltaEventArgs eventArgs)
+        private static void OnColumnHeaderDragDeltaNotifyVerticalChange(object o, System.Windows.Controls.Primitives.DragDeltaEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragDeltaNotifyVerticalChange((DependencyObject)o);
             if (command.CanExecute(eventArgs.VerticalChange))
@@ -2320,7 +2322,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragDeltaNotifyRoutedEvent(object o, DragDeltaEventArgs eventArgs)
+        private static void OnColumnHeaderDragDeltaNotifyRoutedEvent(object o, System.Windows.Controls.Primitives.DragDeltaEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragDeltaNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -2357,7 +2359,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragDeltaNotifyHandled(object o, DragDeltaEventArgs eventArgs)
+        private static void OnColumnHeaderDragDeltaNotifyHandled(object o, System.Windows.Controls.Primitives.DragDeltaEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragDeltaNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -2394,7 +2396,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragDeltaNotifySource(object o, DragDeltaEventArgs eventArgs)
+        private static void OnColumnHeaderDragDeltaNotifySource(object o, System.Windows.Controls.Primitives.DragDeltaEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragDeltaNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -2431,7 +2433,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragDeltaNotifyOriginalSource(object o, DragDeltaEventArgs eventArgs)
+        private static void OnColumnHeaderDragDeltaNotifyOriginalSource(object o, System.Windows.Controls.Primitives.DragDeltaEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragDeltaNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -2505,7 +2507,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragStartedNotifyHorizontalOffset(object o, DragStartedEventArgs eventArgs)
+        private static void OnColumnHeaderDragStartedNotifyHorizontalOffset(object o, System.Windows.Controls.Primitives.DragStartedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragStartedNotifyHorizontalOffset((DependencyObject)o);
             if (command.CanExecute(eventArgs.HorizontalOffset))
@@ -2542,7 +2544,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragStartedNotifyVerticalOffset(object o, DragStartedEventArgs eventArgs)
+        private static void OnColumnHeaderDragStartedNotifyVerticalOffset(object o, System.Windows.Controls.Primitives.DragStartedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragStartedNotifyVerticalOffset((DependencyObject)o);
             if (command.CanExecute(eventArgs.VerticalOffset))
@@ -2579,7 +2581,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragStartedNotifyRoutedEvent(object o, DragStartedEventArgs eventArgs)
+        private static void OnColumnHeaderDragStartedNotifyRoutedEvent(object o, System.Windows.Controls.Primitives.DragStartedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragStartedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -2616,7 +2618,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragStartedNotifyHandled(object o, DragStartedEventArgs eventArgs)
+        private static void OnColumnHeaderDragStartedNotifyHandled(object o, System.Windows.Controls.Primitives.DragStartedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragStartedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -2653,7 +2655,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragStartedNotifySource(object o, DragStartedEventArgs eventArgs)
+        private static void OnColumnHeaderDragStartedNotifySource(object o, System.Windows.Controls.Primitives.DragStartedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragStartedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -2690,7 +2692,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnHeaderDragStartedNotifyOriginalSource(object o, DragStartedEventArgs eventArgs)
+        private static void OnColumnHeaderDragStartedNotifyOriginalSource(object o, System.Windows.Controls.Primitives.DragStartedEventArgs eventArgs)
         {
             var command = GetColumnHeaderDragStartedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -2764,7 +2766,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnReorderedNotifyColumn(object o, DataGridColumnEventArgs eventArgs)
+        private static void OnColumnReorderedNotifyColumn(object o, System.Windows.Controls.DataGridColumnEventArgs eventArgs)
         {
             var command = GetColumnReorderedNotifyColumn((DependencyObject)o);
             if (command.CanExecute(eventArgs.Column))
@@ -2838,7 +2840,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnReorderingNotifyCancel(object o, DataGridColumnReorderingEventArgs eventArgs)
+        private static void OnColumnReorderingNotifyCancel(object o, System.Windows.Controls.DataGridColumnReorderingEventArgs eventArgs)
         {
             var command = GetColumnReorderingNotifyCancel((DependencyObject)o);
             if (command.CanExecute(eventArgs.Cancel))
@@ -2875,7 +2877,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnReorderingNotifyDropLocationIndicator(object o, DataGridColumnReorderingEventArgs eventArgs)
+        private static void OnColumnReorderingNotifyDropLocationIndicator(object o, System.Windows.Controls.DataGridColumnReorderingEventArgs eventArgs)
         {
             var command = GetColumnReorderingNotifyDropLocationIndicator((DependencyObject)o);
             if (command.CanExecute(eventArgs.DropLocationIndicator))
@@ -2912,7 +2914,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnReorderingNotifyDragIndicator(object o, DataGridColumnReorderingEventArgs eventArgs)
+        private static void OnColumnReorderingNotifyDragIndicator(object o, System.Windows.Controls.DataGridColumnReorderingEventArgs eventArgs)
         {
             var command = GetColumnReorderingNotifyDragIndicator((DependencyObject)o);
             if (command.CanExecute(eventArgs.DragIndicator))
@@ -2949,7 +2951,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnColumnReorderingNotifyColumn(object o, DataGridColumnReorderingEventArgs eventArgs)
+        private static void OnColumnReorderingNotifyColumn(object o, System.Windows.Controls.DataGridColumnReorderingEventArgs eventArgs)
         {
             var command = GetColumnReorderingNotifyColumn((DependencyObject)o);
             if (command.CanExecute(eventArgs.Column))
@@ -3023,7 +3025,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCopyingRowClipboardContentNotifyItem(object o, DataGridRowClipboardEventArgs eventArgs)
+        private static void OnCopyingRowClipboardContentNotifyItem(object o, System.Windows.Controls.DataGridRowClipboardEventArgs eventArgs)
         {
             var command = GetCopyingRowClipboardContentNotifyItem((DependencyObject)o);
             if (command.CanExecute(eventArgs.Item))
@@ -3060,7 +3062,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCopyingRowClipboardContentNotifyClipboardRowContent(object o, DataGridRowClipboardEventArgs eventArgs)
+        private static void OnCopyingRowClipboardContentNotifyClipboardRowContent(object o, System.Windows.Controls.DataGridRowClipboardEventArgs eventArgs)
         {
             var command = GetCopyingRowClipboardContentNotifyClipboardRowContent((DependencyObject)o);
             if (command.CanExecute(eventArgs.ClipboardRowContent))
@@ -3097,7 +3099,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCopyingRowClipboardContentNotifyStartColumnDisplayIndex(object o, DataGridRowClipboardEventArgs eventArgs)
+        private static void OnCopyingRowClipboardContentNotifyStartColumnDisplayIndex(object o, System.Windows.Controls.DataGridRowClipboardEventArgs eventArgs)
         {
             var command = GetCopyingRowClipboardContentNotifyStartColumnDisplayIndex((DependencyObject)o);
             if (command.CanExecute(eventArgs.StartColumnDisplayIndex))
@@ -3134,7 +3136,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCopyingRowClipboardContentNotifyEndColumnDisplayIndex(object o, DataGridRowClipboardEventArgs eventArgs)
+        private static void OnCopyingRowClipboardContentNotifyEndColumnDisplayIndex(object o, System.Windows.Controls.DataGridRowClipboardEventArgs eventArgs)
         {
             var command = GetCopyingRowClipboardContentNotifyEndColumnDisplayIndex((DependencyObject)o);
             if (command.CanExecute(eventArgs.EndColumnDisplayIndex))
@@ -3171,7 +3173,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnCopyingRowClipboardContentNotifyIsColumnHeadersRow(object o, DataGridRowClipboardEventArgs eventArgs)
+        private static void OnCopyingRowClipboardContentNotifyIsColumnHeadersRow(object o, System.Windows.Controls.DataGridRowClipboardEventArgs eventArgs)
         {
             var command = GetCopyingRowClipboardContentNotifyIsColumnHeadersRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.IsColumnHeadersRow))
@@ -3319,7 +3321,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnLoadingRowNotifyRow(object o, DataGridRowEventArgs eventArgs)
+        private static void OnLoadingRowNotifyRow(object o, System.Windows.Controls.DataGridRowEventArgs eventArgs)
         {
             var command = GetLoadingRowNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -3393,7 +3395,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnLoadingRowDetailsNotifyDetailsElement(object o, DataGridRowDetailsEventArgs eventArgs)
+        private static void OnLoadingRowDetailsNotifyDetailsElement(object o, System.Windows.Controls.DataGridRowDetailsEventArgs eventArgs)
         {
             var command = GetLoadingRowDetailsNotifyDetailsElement((DependencyObject)o);
             if (command.CanExecute(eventArgs.DetailsElement))
@@ -3430,7 +3432,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnLoadingRowDetailsNotifyRow(object o, DataGridRowDetailsEventArgs eventArgs)
+        private static void OnLoadingRowDetailsNotifyRow(object o, System.Windows.Controls.DataGridRowDetailsEventArgs eventArgs)
         {
             var command = GetLoadingRowDetailsNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -3504,7 +3506,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnPreparingCellForEditNotifyColumn(object o, DataGridPreparingCellForEditEventArgs eventArgs)
+        private static void OnPreparingCellForEditNotifyColumn(object o, System.Windows.Controls.DataGridPreparingCellForEditEventArgs eventArgs)
         {
             var command = GetPreparingCellForEditNotifyColumn((DependencyObject)o);
             if (command.CanExecute(eventArgs.Column))
@@ -3541,7 +3543,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnPreparingCellForEditNotifyRow(object o, DataGridPreparingCellForEditEventArgs eventArgs)
+        private static void OnPreparingCellForEditNotifyRow(object o, System.Windows.Controls.DataGridPreparingCellForEditEventArgs eventArgs)
         {
             var command = GetPreparingCellForEditNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -3578,7 +3580,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnPreparingCellForEditNotifyEditingEventArgs(object o, DataGridPreparingCellForEditEventArgs eventArgs)
+        private static void OnPreparingCellForEditNotifyEditingEventArgs(object o, System.Windows.Controls.DataGridPreparingCellForEditEventArgs eventArgs)
         {
             var command = GetPreparingCellForEditNotifyEditingEventArgs((DependencyObject)o);
             if (command.CanExecute(eventArgs.EditingEventArgs))
@@ -3615,7 +3617,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnPreparingCellForEditNotifyEditingElement(object o, DataGridPreparingCellForEditEventArgs eventArgs)
+        private static void OnPreparingCellForEditNotifyEditingElement(object o, System.Windows.Controls.DataGridPreparingCellForEditEventArgs eventArgs)
         {
             var command = GetPreparingCellForEditNotifyEditingElement((DependencyObject)o);
             if (command.CanExecute(eventArgs.EditingElement))
@@ -3689,7 +3691,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnRowDetailsVisibilityChangedNotifyDetailsElement(object o, DataGridRowDetailsEventArgs eventArgs)
+        private static void OnRowDetailsVisibilityChangedNotifyDetailsElement(object o, System.Windows.Controls.DataGridRowDetailsEventArgs eventArgs)
         {
             var command = GetRowDetailsVisibilityChangedNotifyDetailsElement((DependencyObject)o);
             if (command.CanExecute(eventArgs.DetailsElement))
@@ -3726,7 +3728,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnRowDetailsVisibilityChangedNotifyRow(object o, DataGridRowDetailsEventArgs eventArgs)
+        private static void OnRowDetailsVisibilityChangedNotifyRow(object o, System.Windows.Controls.DataGridRowDetailsEventArgs eventArgs)
         {
             var command = GetRowDetailsVisibilityChangedNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -3800,7 +3802,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnRowEditEndingNotifyCancel(object o, DataGridRowEditEndingEventArgs eventArgs)
+        private static void OnRowEditEndingNotifyCancel(object o, System.Windows.Controls.DataGridRowEditEndingEventArgs eventArgs)
         {
             var command = GetRowEditEndingNotifyCancel((DependencyObject)o);
             if (command.CanExecute(eventArgs.Cancel))
@@ -3837,7 +3839,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnRowEditEndingNotifyRow(object o, DataGridRowEditEndingEventArgs eventArgs)
+        private static void OnRowEditEndingNotifyRow(object o, System.Windows.Controls.DataGridRowEditEndingEventArgs eventArgs)
         {
             var command = GetRowEditEndingNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -3874,7 +3876,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnRowEditEndingNotifyEditAction(object o, DataGridRowEditEndingEventArgs eventArgs)
+        private static void OnRowEditEndingNotifyEditAction(object o, System.Windows.Controls.DataGridRowEditEndingEventArgs eventArgs)
         {
             var command = GetRowEditEndingNotifyEditAction((DependencyObject)o);
             if (command.CanExecute(eventArgs.EditAction))
@@ -4022,7 +4024,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnUnloadingRowNotifyRow(object o, DataGridRowEventArgs eventArgs)
+        private static void OnUnloadingRowNotifyRow(object o, System.Windows.Controls.DataGridRowEventArgs eventArgs)
         {
             var command = GetUnloadingRowNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -4096,7 +4098,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnUnloadingRowDetailsNotifyDetailsElement(object o, DataGridRowDetailsEventArgs eventArgs)
+        private static void OnUnloadingRowDetailsNotifyDetailsElement(object o, System.Windows.Controls.DataGridRowDetailsEventArgs eventArgs)
         {
             var command = GetUnloadingRowDetailsNotifyDetailsElement((DependencyObject)o);
             if (command.CanExecute(eventArgs.DetailsElement))
@@ -4133,7 +4135,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnUnloadingRowDetailsNotifyRow(object o, DataGridRowDetailsEventArgs eventArgs)
+        private static void OnUnloadingRowDetailsNotifyRow(object o, System.Windows.Controls.DataGridRowDetailsEventArgs eventArgs)
         {
             var command = GetUnloadingRowDetailsNotifyRow((DependencyObject)o);
             if (command.CanExecute(eventArgs.Row))
@@ -4444,7 +4446,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDateValidationErrorNotifyException(object o, DatePickerDateValidationErrorEventArgs eventArgs)
+        private static void OnDateValidationErrorNotifyException(object o, System.Windows.Controls.DatePickerDateValidationErrorEventArgs eventArgs)
         {
             var command = GetDateValidationErrorNotifyException((DependencyObject)o);
             if (command.CanExecute(eventArgs.Exception))
@@ -4481,7 +4483,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDateValidationErrorNotifyText(object o, DatePickerDateValidationErrorEventArgs eventArgs)
+        private static void OnDateValidationErrorNotifyText(object o, System.Windows.Controls.DatePickerDateValidationErrorEventArgs eventArgs)
         {
             var command = GetDateValidationErrorNotifyText((DependencyObject)o);
             if (command.CanExecute(eventArgs.Text))
@@ -4518,7 +4520,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnDateValidationErrorNotifyThrowException(object o, DatePickerDateValidationErrorEventArgs eventArgs)
+        private static void OnDateValidationErrorNotifyThrowException(object o, System.Windows.Controls.DatePickerDateValidationErrorEventArgs eventArgs)
         {
             var command = GetDateValidationErrorNotifyThrowException((DependencyObject)o);
             if (command.CanExecute(eventArgs.ThrowException))
@@ -4592,7 +4594,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDateChangedNotifyRemovedItems(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDateChangedNotifyRemovedItems(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDateChangedNotifyRemovedItems((DependencyObject)o);
             if (command.CanExecute(eventArgs.RemovedItems))
@@ -4629,7 +4631,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDateChangedNotifyAddedItems(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDateChangedNotifyAddedItems(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDateChangedNotifyAddedItems((DependencyObject)o);
             if (command.CanExecute(eventArgs.AddedItems))
@@ -4666,7 +4668,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDateChangedNotifyRoutedEvent(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDateChangedNotifyRoutedEvent(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDateChangedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -4703,7 +4705,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDateChangedNotifyHandled(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDateChangedNotifyHandled(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDateChangedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -4740,7 +4742,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDateChangedNotifySource(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDateChangedNotifySource(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDateChangedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -4777,7 +4779,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSelectedDateChangedNotifyOriginalSource(object o, SelectionChangedEventArgs eventArgs)
+        private static void OnSelectedDateChangedNotifyOriginalSource(object o, System.Windows.Controls.SelectionChangedEventArgs eventArgs)
         {
             var command = GetSelectedDateChangedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -5236,7 +5238,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnImageFailedNotifyErrorException(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnImageFailedNotifyErrorException(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetImageFailedNotifyErrorException((DependencyObject)o);
             if (command.CanExecute(eventArgs.ErrorException))
@@ -5273,7 +5275,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnImageFailedNotifyRoutedEvent(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnImageFailedNotifyRoutedEvent(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetImageFailedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -5310,7 +5312,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnImageFailedNotifyHandled(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnImageFailedNotifyHandled(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetImageFailedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -5347,7 +5349,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnImageFailedNotifySource(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnImageFailedNotifySource(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetImageFailedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -5384,7 +5386,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnImageFailedNotifyOriginalSource(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnImageFailedNotifyOriginalSource(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetImageFailedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -6213,7 +6215,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnMediaFailedNotifyErrorException(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnMediaFailedNotifyErrorException(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetMediaFailedNotifyErrorException((DependencyObject)o);
             if (command.CanExecute(eventArgs.ErrorException))
@@ -6250,7 +6252,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnMediaFailedNotifyRoutedEvent(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnMediaFailedNotifyRoutedEvent(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetMediaFailedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -6287,7 +6289,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnMediaFailedNotifyHandled(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnMediaFailedNotifyHandled(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetMediaFailedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -6324,7 +6326,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnMediaFailedNotifySource(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnMediaFailedNotifySource(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetMediaFailedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -6361,7 +6363,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnMediaFailedNotifyOriginalSource(object o, ExceptionRoutedEventArgs eventArgs)
+        private static void OnMediaFailedNotifyOriginalSource(object o, System.Windows.ExceptionRoutedEventArgs eventArgs)
         {
             var command = GetMediaFailedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -6472,7 +6474,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnScriptCommandNotifyParameterType(object o, MediaScriptCommandRoutedEventArgs eventArgs)
+        private static void OnScriptCommandNotifyParameterType(object o, System.Windows.MediaScriptCommandRoutedEventArgs eventArgs)
         {
             var command = GetScriptCommandNotifyParameterType((DependencyObject)o);
             if (command.CanExecute(eventArgs.ParameterType))
@@ -6509,7 +6511,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnScriptCommandNotifyParameterValue(object o, MediaScriptCommandRoutedEventArgs eventArgs)
+        private static void OnScriptCommandNotifyParameterValue(object o, System.Windows.MediaScriptCommandRoutedEventArgs eventArgs)
         {
             var command = GetScriptCommandNotifyParameterValue((DependencyObject)o);
             if (command.CanExecute(eventArgs.ParameterValue))
@@ -6546,7 +6548,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnScriptCommandNotifyRoutedEvent(object o, MediaScriptCommandRoutedEventArgs eventArgs)
+        private static void OnScriptCommandNotifyRoutedEvent(object o, System.Windows.MediaScriptCommandRoutedEventArgs eventArgs)
         {
             var command = GetScriptCommandNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -6583,7 +6585,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnScriptCommandNotifyHandled(object o, MediaScriptCommandRoutedEventArgs eventArgs)
+        private static void OnScriptCommandNotifyHandled(object o, System.Windows.MediaScriptCommandRoutedEventArgs eventArgs)
         {
             var command = GetScriptCommandNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -6620,7 +6622,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnScriptCommandNotifySource(object o, MediaScriptCommandRoutedEventArgs eventArgs)
+        private static void OnScriptCommandNotifySource(object o, System.Windows.MediaScriptCommandRoutedEventArgs eventArgs)
         {
             var command = GetScriptCommandNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -6657,7 +6659,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnScriptCommandNotifyOriginalSource(object o, MediaScriptCommandRoutedEventArgs eventArgs)
+        private static void OnScriptCommandNotifyOriginalSource(object o, System.Windows.MediaScriptCommandRoutedEventArgs eventArgs)
         {
             var command = GetScriptCommandNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -8296,7 +8298,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSourceUpdatedNotifyTargetObject(object o, DataTransferEventArgs eventArgs)
+        private static void OnSourceUpdatedNotifyTargetObject(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetSourceUpdatedNotifyTargetObject((DependencyObject)o);
             if (command.CanExecute(eventArgs.TargetObject))
@@ -8333,7 +8335,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSourceUpdatedNotifyProperty(object o, DataTransferEventArgs eventArgs)
+        private static void OnSourceUpdatedNotifyProperty(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetSourceUpdatedNotifyProperty((DependencyObject)o);
             if (command.CanExecute(eventArgs.Property))
@@ -8370,7 +8372,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSourceUpdatedNotifyRoutedEvent(object o, DataTransferEventArgs eventArgs)
+        private static void OnSourceUpdatedNotifyRoutedEvent(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetSourceUpdatedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -8407,7 +8409,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSourceUpdatedNotifyHandled(object o, DataTransferEventArgs eventArgs)
+        private static void OnSourceUpdatedNotifyHandled(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetSourceUpdatedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -8444,7 +8446,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSourceUpdatedNotifySource(object o, DataTransferEventArgs eventArgs)
+        private static void OnSourceUpdatedNotifySource(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetSourceUpdatedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -8481,7 +8483,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnSourceUpdatedNotifyOriginalSource(object o, DataTransferEventArgs eventArgs)
+        private static void OnSourceUpdatedNotifyOriginalSource(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetSourceUpdatedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))
@@ -8555,7 +8557,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnTargetUpdatedNotifyTargetObject(object o, DataTransferEventArgs eventArgs)
+        private static void OnTargetUpdatedNotifyTargetObject(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetTargetUpdatedNotifyTargetObject((DependencyObject)o);
             if (command.CanExecute(eventArgs.TargetObject))
@@ -8592,7 +8594,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnTargetUpdatedNotifyProperty(object o, DataTransferEventArgs eventArgs)
+        private static void OnTargetUpdatedNotifyProperty(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetTargetUpdatedNotifyProperty((DependencyObject)o);
             if (command.CanExecute(eventArgs.Property))
@@ -8629,7 +8631,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnTargetUpdatedNotifyRoutedEvent(object o, DataTransferEventArgs eventArgs)
+        private static void OnTargetUpdatedNotifyRoutedEvent(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetTargetUpdatedNotifyRoutedEvent((DependencyObject)o);
             if (command.CanExecute(eventArgs.RoutedEvent))
@@ -8666,7 +8668,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnTargetUpdatedNotifyHandled(object o, DataTransferEventArgs eventArgs)
+        private static void OnTargetUpdatedNotifyHandled(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetTargetUpdatedNotifyHandled((DependencyObject)o);
             if (command.CanExecute(eventArgs.Handled))
@@ -8703,7 +8705,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnTargetUpdatedNotifySource(object o, DataTransferEventArgs eventArgs)
+        private static void OnTargetUpdatedNotifySource(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetTargetUpdatedNotifySource((DependencyObject)o);
             if (command.CanExecute(eventArgs.Source))
@@ -8740,7 +8742,7 @@ namespace RedSheeps.Wpf.Interactivity {
             }
         }
         
-        private static void OnTargetUpdatedNotifyOriginalSource(object o, DataTransferEventArgs eventArgs)
+        private static void OnTargetUpdatedNotifyOriginalSource(object o, System.Windows.Data.DataTransferEventArgs eventArgs)
         {
             var command = GetTargetUpdatedNotifyOriginalSource((DependencyObject)o);
             if (command.CanExecute(eventArgs.OriginalSource))

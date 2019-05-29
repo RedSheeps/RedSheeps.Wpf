@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interactivity;
 using Microsoft.Win32;
@@ -7,7 +8,25 @@ namespace RedSheeps.Wpf.Interactivity
 {
     public class SaveFileAction : TriggerAction<DependencyObject>
     {
-        #region Dependency Properties
+        public static readonly DependencyProperty InitialDirectoryProperty = DependencyProperty.Register(
+            "InitialDirectory", typeof(string), typeof(SaveFileAction), new PropertyMetadata(default(string)));
+
+        public string InitialDirectory
+        {
+            get => (string)GetValue(InitialDirectoryProperty);
+            set => SetValue(InitialDirectoryProperty, value);
+        }
+
+        public static readonly DependencyProperty InitialSpecialDirectoryProperty = DependencyProperty.Register(
+            "InitialSpecialDirectory", typeof(Environment.SpecialFolder?), typeof(SaveFileAction), new PropertyMetadata(default(Environment.SpecialFolder?)));
+
+        public Environment.SpecialFolder? InitialSpecialDirectory
+        {
+            get => (Environment.SpecialFolder?)GetValue(InitialSpecialDirectoryProperty);
+            set => SetValue(InitialSpecialDirectoryProperty, value);
+        }
+
+
         public static readonly DependencyProperty DefaultExtProperty = DependencyProperty.Register(
             "DefaultExt", typeof(string), typeof(SaveFileAction), new PropertyMetadata(default(string)));
 
@@ -52,7 +71,12 @@ namespace RedSheeps.Wpf.Interactivity
             get => (ICommand)GetValue(CommandProperty);
             set => SetValue(CommandProperty, value);
         }
-        #endregion
+
+        private string GetInitialDirectory() =>
+            (InitialSpecialDirectory != null
+                ? Environment.GetFolderPath(InitialSpecialDirectory.Value)
+                : InitialDirectory) ?? string.Empty;
+
 
         protected override void Invoke(object parameter)
         {
@@ -60,6 +84,7 @@ namespace RedSheeps.Wpf.Interactivity
             {
                 var dialog = new SaveFileDialog
                 {
+                    InitialDirectory = GetInitialDirectory(),
                     DefaultExt = DefaultExt,
                     FileName = FileName,
                     Filter = Filter,
