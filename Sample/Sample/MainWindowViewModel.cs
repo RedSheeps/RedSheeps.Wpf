@@ -1,7 +1,9 @@
 ﻿using RedSheeps.Input;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Windows;
 using System.Windows.Input;
 using RedSheeps.Wpf.Interactivity;
 
@@ -29,6 +31,18 @@ namespace Sample
         public INotification<ShowMessageEventArgs> NotificationConfirm { get; } = new Notification<ShowMessageEventArgs>();
 
         public ICommand PositiveCommand => new Command(OnPositive);
+
+        public Command<CancelEventArgs> WindowClosingCommand => new Command<CancelEventArgs>(OnExecute);
+
+        public INotification<ShowMessageEventArgs> ConfirmCloseWindow { get; } = new Notification<ShowMessageEventArgs>();
+
+        private void OnExecute(CancelEventArgs e)
+        {
+            var showMessageEventArgs = new ShowMessageEventArgs();
+            ConfirmCloseWindow.Notify(showMessageEventArgs);
+            if (showMessageEventArgs.MessageBoxResult == MessageBoxResult.Cancel)
+                e.Cancel = true;
+        }
 
         private void OnInitialize()
         {

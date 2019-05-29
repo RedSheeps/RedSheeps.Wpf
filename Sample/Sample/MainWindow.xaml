@@ -8,7 +8,18 @@
         Title="MainWindow" Height="450" Width="800"
         xmlns:interactivity="clr-namespace:RedSheeps.Wpf.Interactivity;assembly=RedSheeps.Wpf"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
-        interactivity:FrameworkElements.Loaded="{Binding InitializeCommand}">
+        interactivity:FrameworkElements.Loaded="{Binding InitializeCommand}"
+        interactivity:Windows.Closing="{Binding WindowClosingCommand}">
+    <i:Interaction.Triggers>
+        <interactivity:NotificationTrigger Notification="{Binding ConfirmCloseWindow}">
+            <interactivity:ShowMessageAction Message="Windowを閉じますか？"
+                                             Caption="Caption"
+                                             MessageBoxButton="OKCancel"
+                                             MessageBoxImage="Question"
+                                             DefaultResult="Cancel"
+                                             Options="None"/>
+        </interactivity:NotificationTrigger>
+    </i:Interaction.Triggers>
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>

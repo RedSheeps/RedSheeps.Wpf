@@ -86,6 +86,7 @@ namespace RedSheeps.Wpf.Interactivity {
 <#
 			foreach (var eventInfo in eventInfos)
 			{
+				var hoge = eventInfo.EventHandlerType.GetRuntimeMethods().Single(x => x.Name == "Invoke").GetParameters()[1];
 				WriteProperty(
 					type, 
 					eventInfo.Name, 
@@ -94,7 +95,7 @@ namespace RedSheeps.Wpf.Interactivity {
 					"On" + eventInfo.Name, 
 					//"EventArgs", 
 					eventInfo.EventHandlerType.GetRuntimeMethods().Single(x => x.Name == "Invoke").GetParameters()[1].ParameterType.Name,
-					"null", 
+					"eventArgs", 
 					"        ");
                 if (eventInfo.EventHandlerType.IsGenericType)
                 {

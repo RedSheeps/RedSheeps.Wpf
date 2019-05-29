@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <Version>0.4.0</Version>
+    <Version>0.5.0</Version>
     <Authors>Atsushi Nakamura</Authors>
     <Company></Company>
     <PackageProjectUrl>https://github.com/nuitsjp/RedSheeps.Wpf</PackageProjectUrl>
