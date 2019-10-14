@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <Version>0.6.0</Version>
+    <Version>0.7.0</Version>
     <Authors>Atsushi Nakamura</Authors>
     <Company></Company>
     <PackageProjectUrl>https://github.com/nuitsjp/RedSheeps.Wpf</PackageProjectUrl>
@@ -15,6 +15,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>0.7.0.0</AssemblyVersion>
+    <PackageIcon>RedSheeps.jpg</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,6 +47,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EventToCommandProperties.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="RedSheeps.jpg" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
