@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSheeps.Wpf", "RedSheeps.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "..\Sample\Sample\Sample.csproj", "{315E962F-84F1-4432-808D-B0C7BC05DBD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSheeps.Wpf.MaterialDesignThemes.App", "RedSheeps.Wpf.MaterialDesignThemes.App\RedSheeps.Wpf.MaterialDesignThemes.App.csproj", "{106C9751-68EA-48C3-ABD7-89E18D0891F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedSheeps.Wpf.MaterialDesignThemes", "RedSheeps.Wpf.MaterialDesignThemes\RedSheeps.Wpf.MaterialDesignThemes.csproj", "{40053FD4-8C11-4515-8C83-20E8C43883CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{315E962F-84F1-4432-808D-B0C7BC05DBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{315E962F-84F1-4432-808D-B0C7BC05DBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{315E962F-84F1-4432-808D-B0C7BC05DBD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106C9751-68EA-48C3-ABD7-89E18D0891F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106C9751-68EA-48C3-ABD7-89E18D0891F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106C9751-68EA-48C3-ABD7-89E18D0891F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106C9751-68EA-48C3-ABD7-89E18D0891F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40053FD4-8C11-4515-8C83-20E8C43883CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40053FD4-8C11-4515-8C83-20E8C43883CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40053FD4-8C11-4515-8C83-20E8C43883CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40053FD4-8C11-4515-8C83-20E8C43883CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

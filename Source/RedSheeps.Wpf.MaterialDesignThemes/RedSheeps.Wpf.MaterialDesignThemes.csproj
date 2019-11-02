@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.1.0</Version>
+    <Authors>Atsushi Nakamura</Authors>
+    <Company>Atsushi Nakamura</Company>
+    <Product>RedSheeps.Wpf.MaterialDesignThemes</Product>
+    <Copyright>Copyright 2019 Atsushi Nakamura</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/nuitsjp/RedSheeps.Wpf</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nuitsjp/RedSheeps.Wpf.git</RepositoryUrl>
+    <PackageIcon>RedSheeps.jpg</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Styles\Generic.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Styles\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="RedSheeps.jpg" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+</Project>
