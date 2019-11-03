@@ -17,10 +17,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Styles\CaptionButton.xaml" />
     <None Remove="Styles\Generic.xaml" />
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="Styles\CaptionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
     <Page Include="Styles\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
@@ -35,7 +40,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="RedSheeps.jpg" Pack="true" PackagePath="\"/>
+    <None Include="RedSheeps.jpg" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="2.6.0" />
   </ItemGroup>
 
 </Project>

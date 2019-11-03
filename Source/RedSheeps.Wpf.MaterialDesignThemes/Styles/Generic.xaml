@@ -5,9 +5,7 @@
 
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Indigo.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
-
+        <ResourceDictionary Source="CaptionButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="WindowTemplateKey" TargetType="{x:Type Window}">
@@ -29,67 +27,8 @@
             </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    <Style x:Key="CaptionButtonStyleKey" TargetType="{x:Type Button}">
-        <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Foreground" Value="{StaticResource PrimaryHueMidForegroundBrush}" />
-        <Setter Property="FontFamily" Value="Marlett"/>
-        <Setter Property="IsTabStop" Value="False"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Margin" Value="5,0,5,0" />
-        <Setter Property="Padding" Value="1" />
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="True">
-                        <Border.Effect>
-                            <DropShadowEffect Opacity="0"/>
-                        </Border.Effect>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.ShadowDepth)" Storyboard.TargetName="border">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)" Storyboard.TargetName="border">
-                                            <EasingColorKeyFrame KeyTime="0" Value="White"/>
-                                        </ColorAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)" Storyboard.TargetName="border">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.6"/>
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Disabled"/>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                        <ContentPresenter x:Name="contentPresenter" Focusable="False" Margin="{TemplateBinding Padding}"
-                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-    </Style>
+    
+    
     <Style TargetType="{x:Type Window}" x:Key="ChromeWindowStyle">
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
@@ -108,7 +47,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="UseLayoutRounding" Value="True"/>
         <Setter Property="WindowState" Value="Normal"/>
-        <Setter Property="Padding" Value="8,3,3,3"/>
+        <Setter Property="Padding" Value="8,0,0,0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
@@ -117,7 +56,7 @@
                             <Border DockPanel.Dock="Top"  Background="{StaticResource PrimaryHueMidBrush}" Padding="{TemplateBinding Padding}">
                                 <Grid>
                                     <TextBlock Text="{TemplateBinding Title}" Foreground="{StaticResource PrimaryHueMidForegroundBrush}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="14.667" />
-                                    <StackPanel Orientation="Horizontal" Margin="5"
+                                    <StackPanel Orientation="Horizontal"
                                                         HorizontalAlignment="Right"
                                                         VerticalAlignment="Top">
                                         <Button Content="0" Style="{DynamicResource CaptionButtonStyleKey}" Command="{x:Static local:ChromeWindowCommands.MinimizeCommand}" CommandParameter="{Binding ElementName=LayoutRoot}"/>
@@ -141,7 +80,7 @@
                 <Setter Property="Template" Value="{StaticResource WindowTemplateKey}"/>
             </Trigger>
             <Trigger Property="WindowState" Value="Maximized">
-                <Setter Property="Padding" Value="15,8,3,3"/>
+                <Setter Property="Padding" Value="15,7,7,0"/>
             </Trigger>
         </Style.Triggers>
     </Style>
